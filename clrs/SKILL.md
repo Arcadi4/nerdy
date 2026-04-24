@@ -23,6 +23,7 @@ Current chapter skills:
 - `characterizing-running-times`: asymptotic notation, running-time bounds, growth-rate comparisons, and loop-bound reasoning.
 - `divide-and-conquer`: recurrences, recursion trees, substitution, Master theorem, Akra-Bazzi, and divide-and-conquer matrix multiplication.
 - `probabilistic-analysis-and-randomized-algorithms`: probabilistic analysis, indicator random variables, randomized algorithms, random permutations, balls-and-bins, birthday paradox, streaks, and online hiring.
+- `sorting-and-order-statistics`: heaps, priority queues, sorting choice, stability, linear-time sorting preconditions, selection, medians, quantiles, and top-k decisions.
 
 ## Mathematical Formatting
 
