@@ -26,6 +26,7 @@ Current chapter skills:
 - `hash-tables`: direct addressing, chaining, open addressing, universal hashing, load factors, deletion behavior, probe bounds, and cache-aware dictionary design.
 - `binary-search-trees`: ordered dynamic sets, predecessor and successor navigation, BST deletion and transplant, red-black rotations and balancing invariants, and production ordered-container choices.
 - `dynamic-programming`: optimal substructure, overlapping subproblems, memoization, bottom-up tables, reconstruction, rod cutting, matrix-chain multiplication, LCS, optimal BSTs, and DP production tradeoffs.
+- `greedy-algorithms`: greedy-choice property, exchange arguments, activity selection, fractional knapsack, Huffman coding, offline caching, and greedy-versus-DP traps.
 - `probabilistic-analysis-and-randomized-algorithms`: probabilistic analysis, indicator random variables, randomized algorithms, random permutations, balls-and-bins, birthday paradox, streaks, and online hiring.
 - `sorting-and-order-statistics`: heaps, priority queues, sorting choice, stability, linear-time sorting preconditions, selection, medians, quantiles, and top-k decisions.
 
