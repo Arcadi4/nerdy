@@ -1,6 +1,6 @@
 ---
 name: sorting-and-order-statistics
-description: Use when choosing or analyzing CLRS sorting, heaps, priority queues, linear-time integer/distribution sorting, quicksort, selection, medians, quantiles, top-k, or order-statistic algorithms under practical engineering constraints.
+description: Use when choosing or analyzing sorting, heaps, priority queues, linear-time integer/distribution sorting, quicksort, selection, medians, quantiles, top-k, or order-statistic algorithms under practical engineering constraints.
 license: MIT
 ---
 
@@ -61,7 +61,7 @@ because all permutations must remain possible leaves. This lower bound does **no
 | Insertion sort | Small arrays, nearly sorted runs, final cutoff inside engineered sorts | Large arbitrary inputs; worst case is quadratic |
 | Merge sort or stable library sort | Stability is required and extra memory is acceptable | In-place memory is mandatory |
 | Heapsort | In-place worst-case comparison bound is more important than constants/cache behavior | You want the fastest ordinary production sort |
-| Quicksort partitioning | Teaching, `nth_element`, partition-based selection, or controlled internal implementation | Hand-rolled textbook quicksort in production |
+| Quicksort partitioning | Teaching, `nth_element`, partition-based selection, or controlled internal implementation | Hand-rolled quicksort in production |
 | Counting sort | Integer key domain is small or remapped densely; stability matters | Key range is huge or sparse relative to input |
 | Radix sort | Large batches of fixed-width primitive keys, IDs, or strings with stable digit passes | Memory bandwidth, allocation, or complex comparators dominate |
 | Bucket sort | Distribution is validated and bucket boundaries are chosen from probability mass | Skew is unknown; worst-case guarantees matter |
@@ -70,7 +70,7 @@ Industrial default: use a mature library sort unless a property above clearly be
 
 ## Stability, Satellite Data, and Payload Movement
 
-Sorting keys in CLRS usually means sorting records. In production, keys travel with satellite data.
+Sorting keys usually means sorting records. In production, keys travel with satellite data.
 
 - If equal keys must retain arrival, timestamp, or file order, require a stable algorithm or explicitly add a stable tie-breaker.
 - If records have large payloads, prefer sorting indices, pointers, row IDs, or compact key-reference pairs, then gather or stream the payload once.
@@ -122,7 +122,7 @@ Use this workflow:
 
 Quickselect partitions around a pivot and recurses only into the side containing the desired rank. Its expected time is linear with random pivots, but worst case is quadratic. Median-of-medians spends linear work to choose a pivot that leaves at most a constant fraction of the input alive, giving worst-case linear time with larger constants.
 
-Useful CLRS-derived patterns:
+Useful patterns:
 
 - Simultaneous min and max: compare items in pairs, then compare the smaller to the current min and the larger to the current max.
 - Largest k sorted: full sort is simple, heap extraction costs based on k, selection plus sorting k is often best for batch data when k is small.

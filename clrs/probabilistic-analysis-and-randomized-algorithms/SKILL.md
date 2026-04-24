@@ -1,6 +1,6 @@
 ---
 name: probabilistic-analysis-and-randomized-algorithms
-description: Use when analyzing CLRS randomized algorithms, probabilistic analysis, indicator random variables, hiring and secretary problems, random permutations, balls-and-bins, birthday paradox, streaks, or average-case versus expected-time reasoning.
+description: Use when analyzing randomized algorithms, probabilistic analysis, indicator random variables, hiring and secretary problems, random permutations, balls-and-bins, birthday paradox, streaks, or average-case versus expected-time reasoning.
 license: MIT
 ---
 
@@ -26,7 +26,7 @@ Do **not** use this skill merely because an answer contains asymptotic notation.
 
 ## First Distinction
 
-| Situation | CLRS term | Expectation is over | Required statement |
+| Situation | Concept | Expectation is over | Required statement |
 | --- | --- | --- | --- |
 | Deterministic algorithm, random input model | Average-case analysis | Input distribution | State the assumed input distribution |
 | Algorithm makes random choices | Expected running time or expected cost | Random-number generator outcomes | State the guarantee for each fixed input if applicable |
@@ -140,7 +140,7 @@ $$
 
 but only the cyclic rotations can occur. Most of the possible permutations have probability zero, so the distribution is not uniform.
 
-For `RANDOMLY-PERMUTE`, also called `RANDOMIZE-IN-PLACE` in some CLRS editions, which swaps the current array position with a random position from the current suffix, prove uniformity with this invariant: just before iteration:
+For `RANDOMLY-PERMUTE`, also called `RANDOMIZE-IN-PLACE` in some editions, which swaps the current array position with a random position from the current suffix, prove uniformity with this invariant: just before iteration:
 
 $$
 i,
@@ -172,7 +172,7 @@ $$
 
 ## Random Sampling
 
-To show a sampling procedure returns a uniform subset, prove the subset distribution, not just per-element inclusion probabilities. CLRS `RANDOM-SAMPLE` makes only:
+To show a sampling procedure returns a uniform subset, prove the subset distribution, not just per-element inclusion probabilities. `RANDOM-SAMPLE` makes only:
 
 $$
 m

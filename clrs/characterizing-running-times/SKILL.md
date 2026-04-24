@@ -1,6 +1,6 @@
 ---
 name: characterizing-running-times
-description: Use when analyzing algorithm running time, asymptotic notation, Big O, Omega, Theta, little-o, little-omega, growth-rate comparisons, loop bounds, recurrence terms, or CLRS-style asymptotic exercises.
+description: Use when analyzing algorithm running time, asymptotic notation, Big O, Omega, Theta, little-o, little-omega, growth-rate comparisons, loop bounds, recurrence terms, or textbook-style asymptotic exercises.
 license: MIT
 ---
 

@@ -1,6 +1,6 @@
 ---
 name: dynamic-programming
-description: Use when solving CLRS dynamic programming problems, deriving optimal substructure recurrences, choosing memoization or bottom-up tables, reconstructing optimal choices, analyzing overlapping subproblems, LCS, matrix-chain multiplication, rod cutting, optimal BSTs, or DP production tradeoffs.
+description: Use when solving dynamic programming problems, deriving optimal substructure recurrences, choosing memoization or bottom-up tables, reconstructing optimal choices, analyzing overlapping subproblems, LCS, matrix-chain multiplication, rod cutting, optimal BSTs, or DP production tradeoffs.
 license: MIT
 ---
 
@@ -8,7 +8,7 @@ license: MIT
 
 ## Overview
 
-Dynamic programming is not "try every recurrence and cache it." CLRS Chapter 14 teaches a discipline: prove the subproblems are independent, choose state variables that preserve all information needed for future choices, compute each distinct subproblem once, and store enough choice information to reconstruct the requested solution.
+Dynamic programming is not "try every recurrence and cache it." DP teaches a discipline: prove the subproblems are independent, choose state variables that preserve all information needed for future choices, compute each distinct subproblem once, and store enough choice information to reconstruct the requested solution.
 
 **Core principle:** before writing a table, identify the choice, prove optimal substructure by cut-and-paste, verify overlapping subproblems, then decide whether the answer needs only values or also reconstruction metadata.
 
@@ -18,9 +18,9 @@ Follow the parent `clrs` skill for mathematical formatting, formula-free heading
 
 ## Output Discipline for DP Answers
 
-When a prompt asks for a CLRS DP answer, start with the answer itself. Do not mention reading skill files, planning the response, recalling the chapter, checking requirements, or applying this skill. Those sentences are scratch-work and violate the parent `clrs` skill. If a task requires reading files first, do it silently; the delivered answer must not say that it happened.
+When a prompt asks for a DP answer, start with the answer itself. Do not mention reading skill files, planning the response, recalling the chapter, checking requirements, or applying this skill. Those sentences are scratch-work and violate the parent `clrs` skill. If a task requires reading files first, do it silently; the delivered answer must not say that it happened.
 
-Use prose for names such as "the value table" or "the split table," then put formal notation in a display block. Do not put table entries, index inequalities, dimensions, recurrences, bounds, matrix names, prefix names, key names, or probability symbols in inline math or inline code spans. For CLRS DP answers, inline mathematical notation is not "small enough" to be safe. If a sentence needs notation, split it into a prose sentence followed by a display block.
+Use prose for names such as "the value table" or "the split table," then put formal notation in a display block. Do not put table entries, index inequalities, dimensions, recurrences, bounds, matrix names, prefix names, key names, or probability symbols in inline math or inline code spans. For DP answers, inline mathematical notation is not "small enough" to be safe. If a sentence needs notation, split it into a prose sentence followed by a display block.
 
 Forbidden answer fragments:
 
@@ -83,14 +83,14 @@ $$
 Use this skill for:
 
 - Optimization problems with repeated subproblems, state choices, memoization, bottom-up tables, or reconstruction of optimal decisions.
-- CLRS Chapter 14 examples: rod cutting, matrix-chain multiplication, longest common subsequence, and optimal binary search trees.
+- Classic DP examples: rod cutting, matrix-chain multiplication, longest common subsequence, and optimal binary search trees.
 - Problems asking whether a recurrence has optimal substructure, overlapping subproblems, or a valid subproblem graph.
 - Exercise-style formulations such as longest path in a DAG, longest palindromic subsequence, printing neatly, edit distance, Viterbi, seam carving, bitonic Euclidean TSP, string breaking, inventory planning, and knapsack-like selection.
 - Engineering questions where a textbook DP table must be adapted for memory pressure, streaming input, latency, sparse states, or solution reconstruction.
 
 Do **not** use this skill merely because a problem has recursion. Divide-and-conquer with disjoint subproblems belongs with `divide-and-conquer`; greedy choice belongs elsewhere unless the prompt asks why greedy fails or how DP differs.
 
-## The CLRS Four-Step Method
+## The Four-Step DP Method
 
 1. **Characterize an optimal solution.** Name the last or first choice and the subproblems created by that choice.
 2. **Define the optimal value recursively.** Include base cases, legal indices, and what each table entry means.
@@ -139,7 +139,7 @@ $$
 r_n=\max_{1\le i\le n}(p_i+r_{n-i})
 $$
 
-The naive recursion is exponential because it recomputes the same shorter rods. The CLRS count satisfies:
+The naive recursion is exponential because it recomputes the same shorter rods. The recurrence count satisfies:
 
 $$
 T(0)=1
@@ -237,7 +237,7 @@ $$
 c[i,j]=\max(c[i-1,j],c[i,j-1])
 $$
 
-The CLRS theorem behind this recurrence is a suffix choice theorem: matching last symbols belong to some LCS of the full prefixes, while differing last symbols justify dropping one side. Fill the table over prefix lengths in row-major or column-major dependency order.
+The theorem behind this recurrence is a suffix choice theorem: matching last symbols belong to some LCS of the full prefixes, while differing last symbols justify dropping one side. Fill the table over prefix lengths in row-major or column-major dependency order.
 
 For reconstruction, store arrows for diagonal, up, and left moves, or reconstruct from the value table: on a match output that symbol after recursively moving diagonally; otherwise move to a neighbor with the same optimal value.
 
@@ -299,7 +299,7 @@ $$
 root[i,j]=\operatorname*{argmin}_{i\le r\le j}\left(e[i,r-1]+e[r+1,j]+w[i,j]\right)
 $$
 
-Fill by increasing interval length. The direct CLRS algorithm runs in:
+Fill by increasing interval length. The direct cubic algorithm runs in:
 
 $$
 \Theta(n^3)
@@ -319,7 +319,7 @@ $$
 
 ## Worked Pattern: Deriving a DP Recurrence
 
-Use this answer pattern for new Chapter 14 problems:
+Use this answer pattern for new DP problems:
 
 1. **State the object and state.** "Let the table entry mean the optimal value for this exact subproblem." Include index ranges and empty cases.
 2. **Name the last or first choice.** Split point, root, last matched symbol, first cut, predecessor state, or transition.
@@ -336,7 +336,7 @@ Do not transfer the shortest-path proof to longest simple paths in an unweighted
 
 Shortest paths have the cut-and-paste property: replacing a subpath by a shorter subpath preserves path legality and improves the whole path. Longest simple paths do not have the same independent subproblems because the simple-path constraint makes vertices a shared resource. A longest subpath from the start to an intermediate vertex may consume vertices needed after that intermediate vertex, so splicing independently optimal subpaths can repeat vertices or force a globally worse choice.
 
-The correct response is not merely "longest path is hard." The CLRS reason is that optimal substructure requires independent subproblems, and the simple-path constraint couples them.
+The correct response is not merely "longest path is hard." The structural reason is that optimal substructure requires independent subproblems, and the simple-path constraint couples them.
 
 ## Memoization, Bottom-Up Tables, and Production Judgment
 
@@ -351,7 +351,7 @@ Top-down memoization and bottom-up tabulation compute the same recurrence only w
 | Severe memory pressure | Rolling arrays, state compression, checkpointing, or approximation | Do not allocate a naive multidimensional table by reflex. |
 | Latency or p99 constraints | Bound state expansions and measure table locality | Asymptotic table size can hide cache and allocation costs. |
 
-When applying CLRS DP in a service, say what transfers: state design, recurrence proof, subproblem graph, and reconstruction. Also say what may not transfer: naive table size, offline availability of all input, exact optimization under unbounded streams, and hand-written implementation when a solver or domain library is safer.
+When applying DP in a service, say what transfers: state design, recurrence proof, subproblem graph, and reconstruction. Also say what may not transfer: naive table size, offline availability of all input, exact optimization under unbounded streams, and hand-written implementation when a solver or domain library is safer.
 
 ## RED Pressure Failures This Skill Prevents
 
@@ -363,7 +363,7 @@ When applying CLRS DP in a service, say what transfers: state design, recurrence
 | Treating longest simple path like shortest path | Explain the vertex-sharing independence failure, not just computational hardness. |
 | Dropping optimal-BST dummy keys | Include empty-subtree base cases and weights using the dummy probabilities. |
 | Reciting generic memoization advice | Tie memoization or tabulation to reachable states, streaming bounds, memory, and reconstruction. |
-| Leaking scratch-work narration or inline formulas in CLRS answers | Start with the polished answer and put formal notation in display blocks. |
+| Leaking scratch-work narration or inline formulas in DP answers | Start with the polished answer and put formal notation in display blocks. |
 
 ## Common Mistakes
 
@@ -386,7 +386,7 @@ Stop and repair the answer if it contains any of these:
 - "Just memoize it" without defining the state key.
 - "Use a two-dimensional table" without explaining what each axis means.
 - An optimal value answer when the prompt asks for the chosen cuts, parenthesization, subsequence, roots, or policy.
-- Inline recurrence algebra in prose for a CLRS answer that should use display math.
+- Inline recurrence algebra in prose for a DP answer that should use display math.
 - Inline table entries, dimensions, prefixes, key names, probability symbols, or index ranges inside prose.
 - Preambles such as "I'll read the files," "Let me recall," or "Using the skill" before the polished answer.
 - Compliance checklists or self-reports before the mathematical answer; put any required checklist after the answer.
@@ -401,7 +401,7 @@ Use these prompts to check whether this skill is working:
 1. "For matrix-chain multiplication with dimensions `p0..pn`, give the DP recurrence, split indexing, table-fill order, reconstruction table, and cost."
 2. "A teammate says longest simple path has the same optimal substructure as shortest path. Explain exactly why the cut-and-paste proof fails."
 3. "State the LCS recurrence using prefixes, including base rows and reconstruction, then give optimal-BST recurrence with dummy keys and weights."
-4. "A service optimization problem has streaming input, sparse states, memory pressure, and must output decisions. Use CLRS DP without blindly allocating a full table."
+4. "A service optimization problem has streaming input, sparse states, memory pressure, and must output decisions. Use DP without blindly allocating a full table."
 5. "For a new interval optimization problem, derive the recurrence by identifying the choice and proving subproblem optimality before writing code."
 
 Static checks for this skill:
@@ -410,4 +410,4 @@ Static checks for this skill:
 - Frontmatter name is `dynamic-programming` and description starts with `Use when`.
 - The parent `clrs` skill lists this chapter skill.
 - Formal recurrences and bounds are displayed in LaTeX blocks.
-- The text distinguishes CLRS mechanics from production table-design judgment.
+- The text distinguishes DP mechanics from production table-design judgment.

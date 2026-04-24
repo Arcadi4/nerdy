@@ -1,6 +1,6 @@
 ---
 name: hash-tables
-description: Use when choosing, analyzing, or implementing CLRS hash tables, direct addressing, chaining, open addressing, universal hashing, load factors, probe bounds, deletion behavior, or cache-aware dictionary design under practical engineering constraints.
+description: Use when choosing, analyzing, or implementing hash tables, direct addressing, chaining, open addressing, universal hashing, load factors, probe bounds, deletion behavior, or cache-aware dictionary design under practical engineering constraints.
 license: MIT
 ---
 
@@ -17,7 +17,7 @@ Follow the parent `clrs` skill for mathematical formatting, formula-free heading
 ## When to Use
 
 - A prompt involves dictionaries, symbol tables, direct addressing, hash tables, hash functions, collision resolution, chaining, open addressing, double hashing, linear probing, tombstones, load factor, or universal hashing.
-- You need to translate CLRS expected-time assumptions into production capacity planning, p99 latency, adversarial-input defense, or memory-hierarchy behavior.
+- You need to translate expected-time hashing assumptions into production capacity planning, p99 latency, adversarial-input defense, or memory-hierarchy behavior.
 - A proposed design relies on expected constant time and you must state the hashing assumptions that make the claim meaningful.
 - Keys are integers, byte strings, vectors, identifiers, request parameters, or user-controlled data whose distribution may matter.
 
@@ -29,7 +29,7 @@ Do **not** use this skill merely because a platform dictionary exists. Use the l
 | --- | --- | --- |
 | Dense small universe with no huge gaps | Direct addressing or bit vector | Worst-case constant lookup is paid for by allocating the whole universe |
 | Sparse universe with dynamic inserts and deletes | Hash table | Compresses the address space to live keys while keeping expected constant operations |
-| Frequent deletes and simple stable performance | Chaining, or open addressing with explicit cleanup policy | CLRS deletion is straightforward for chaining; tombstones in open addressing accumulate |
+| Frequent deletes and simple stable performance | Chaining, or open addressing with explicit cleanup policy | Deletion is straightforward for chaining; tombstones in open addressing accumulate |
 | Cache-sensitive high-throughput table | Open addressing, often linear-probing-family designs at conservative load | Avoids pointers and probes contiguous cache blocks |
 | Unknown or adversarial keys | Randomized or keyed hash family | Fixed static functions can be collision-targeted |
 | Static set with only search | Consider sorted array, perfect hashing, or open addressing with extra capacity | Preprocessing can buy simpler worst-case lookup behavior |
@@ -49,7 +49,7 @@ Direct addressing teaches the ideal dictionary: one key, one slot, worst-case co
 
 Use direct addressing when the allocation cost is proportional to the real domain you must cover anyway, such as small enum IDs, file descriptors within a fixed bound, bitsets for membership, or dense remapped IDs.
 
-Do not allocate a huge direct-address table just because lookup would be constant. If initialization is the blocker, use the CLRS sparse-table trick: keep a compact stack/list of initialized keys and validate a slot by checking that its back-pointer/index agrees with the compact list. The deeper lesson is lazy validity, not huge zero-filled memory.
+Do not allocate a huge direct-address table just because lookup would be constant. If initialization is the blocker, use the sparse-table trick: keep a compact stack/list of initialized keys and validate a slot by checking that its back-pointer/index agrees with the compact list. The deeper lesson is lazy validity, not huge zero-filled memory.
 
 ## Load Factor and Expected Cost Reference
 
@@ -92,7 +92,7 @@ Use the miss or insert bound for capacity planning when misses, upserts, cache l
 
 ## Hash Function Mindset
 
-CLRS uses independent uniform hashing for chaining and simple uniform hashing for open-address probe sequences as ideal models. Real implementations approximate these models. Always say where the randomness comes from.
+Independent uniform hashing is the ideal model for chaining, and simple uniform hashing is the ideal model for open-address probe sequences. Real implementations approximate these models. Always say where the randomness comes from.
 
 | Hashing approach | Use when | Trap |
 | --- | --- | --- |
@@ -131,7 +131,7 @@ Treat collision strategy and hash function as separate axes. A cache-friendly pr
 
 ## Static Sets and Perfect Hashing
 
-Perfect hashing is the CLRS answer when the key set is fixed and lookups dominate. The mindset is different from a dynamic dictionary: spend randomized preprocessing to remove collision work from future searches.
+Perfect hashing is the right answer when the key set is fixed and lookups dominate. The mindset is different from a dynamic dictionary: spend randomized preprocessing to remove collision work from future searches.
 
 Use this idea when all of these are true:
 
@@ -140,7 +140,7 @@ Use this idea when all of these are true:
 3. lookup latency predictability matters more than update flexibility,
 4. the implementation can afford build-time retries and extra metadata.
 
-The two-level CLRS construction uses a first-level universal hash to place keys into buckets, then gives each bucket its own second-level table and randomly chosen hash function. The first level controls the sum of squared bucket sizes; the second level retries until that bucket has no collisions. The operational lesson is to isolate collision risk locally instead of overbuilding the entire table for the worst bucket.
+The two-level construction uses a first-level universal hash to place keys into buckets, then gives each bucket its own second-level table and randomly chosen hash function. The first level controls the sum of squared bucket sizes; the second level retries until that bucket has no collisions. The operational lesson is to isolate collision risk locally instead of overbuilding the entire table for the worst bucket.
 
 In production, do not hand-roll textbook perfect hashing just because a set is static. Compare it with a sorted array, generated minimal-perfect-hash library, trie/FST, database index, or ordinary hash table. Choose perfect hashing when the build pipeline is controlled and the saved lookup variance or memory layout justifies the preprocessing complexity.
 
@@ -155,11 +155,11 @@ Open addressing deletion is not simply setting a slot to empty. A search stops a
 3. a probing scheme with valid backward-shift deletion, such as linear probing,
 4. a different table design if delete-heavy p99 latency is the priority.
 
-For linear probing, CLRS's deletion lesson is an invariant: after removing a slot, shift forward keys backward only when the vacated slot lies earlier in that key's probe sequence than its current location. Preserve reachability, not merely compactness.
+For linear probing, the deletion lesson is an invariant: after removing a slot, shift forward keys backward only when the vacated slot lies earlier in that key's probe sequence than its current location. Preserve reachability, not merely compactness.
 
 ## Memory-Hierarchy Guidance
 
-CLRS's RAM-model probe count is only a proxy. In real systems, a random cache miss can dominate several arithmetic or mixing operations.
+The RAM-model probe count is only a proxy. In real systems, a random cache miss can dominate several arithmetic or mixing operations.
 
 - Chaining may have good expected comparison counts but poor locality because nodes and buckets can live in different cache lines.
 - Open addressing uses contiguous table storage and often wins despite theoretical clustering concerns.
@@ -179,7 +179,7 @@ For a high-throughput in-memory dictionary with fixed-width keys, common deletes
 5. Measure hit, miss, insert, delete, resize, and rebuild tails separately.
 6. Rehash with a new seed if collision distribution becomes suspicious.
 
-This pattern extracts the CLRS mindset without hand-rolling the educational pseudocode unless the implementation constraints justify it.
+This pattern extracts the hashing mindset without hand-rolling the educational pseudocode unless the implementation constraints justify it.
 
 ## Invariant and Proof Recipes
 

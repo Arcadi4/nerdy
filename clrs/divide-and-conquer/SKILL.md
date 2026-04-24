@@ -107,7 +107,7 @@ $$
 c_{ij}=\sum_{k=1}^{n}a_{ik}b_{kj}
 $$
 
-in $\Theta(n^3)$ time. CLRS’s accumulator-style recursive version has recurrence $T(n)=8T(n/2)+\Theta(1)$ and solves to $\Theta(n^3)$; a block formula that explicitly adds submatrix products instead uses $T(n)=8T(n/2)+\Theta(n^2)$, which also solves to $\Theta(n^3)$.
+in $\Theta(n^3)$ time. The accumulator-style recursive version has recurrence $T(n)=8T(n/2)+\Theta(1)$ and solves to $\Theta(n^3)$; a block formula that explicitly adds submatrix products instead uses $T(n)=8T(n/2)+\Theta(n^2)$, which also solves to $\Theta(n^3)$.
 
 Strassen reduces recursive multiplications from $8$ to $7$:
 
@@ -115,7 +115,7 @@ $$
 T(n)=7T(n/2)+\Theta(n^2)=\Theta(n^{\lg 7}).
 $$
 
-Use these CLRS definitions:
+Use these Strassen helper definitions:
 
 $$
 \begin{aligned}

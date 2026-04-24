@@ -1,6 +1,6 @@
 ---
 name: elementary-data-structures
-description: Use when reasoning about CLRS elementary data structures, dynamic sets, arrays, matrices, stacks, queues, linked lists, sentinels, rooted trees, representation choices, invariants, locality, or pointer-based tradeoffs under practical engineering constraints.
+description: Use when reasoning about elementary data structures, dynamic sets, arrays, matrices, stacks, queues, linked lists, sentinels, rooted trees, representation choices, invariants, locality, or pointer-based tradeoffs under practical engineering constraints.
 license: MIT
 ---
 
@@ -45,7 +45,7 @@ Before choosing, ask:
 
 ## Dynamic-Set Operation Discipline
 
-CLRS separates queries from modifying operations so the representation can be judged by the exact contract.
+Dynamic-set APIs separate queries from modifying operations so the representation can be judged by the exact contract.
 
 | Operation family | Ask first | Common elementary consequence |
 | --- | --- | --- |
@@ -55,7 +55,7 @@ CLRS separates queries from modifying operations so the representation can be ju
 | Minimum/maximum | Is sorted order maintained? | Cheap only if representation keeps the extreme at an accessible boundary |
 | Successor/predecessor | Is there bidirectional navigation or searchable order? | Singly linked lists do not support predecessor cheaply |
 
-Do not answer with a later-chapter structure as if Chapter 10 already solved the problem. It is fine to say: "Chapter 10 teaches why this elementary representation is insufficient; in production use a library hash map, ordered map, deque, vector, or tree implementation once the contract requires it."
+Do not answer with a more advanced structure as if the elementary representation already solved the problem. It is fine to say: "This introductory lesson shows why this elementary representation is insufficient; in production use a library hash map, ordered map, deque, vector, or tree implementation once the contract requires it."
 
 ## Arrays and Matrices: Contiguity Is the Lesson
 
@@ -98,7 +98,7 @@ Linked lists teach that update cost and discovery cost are different.
 | Sorted list | Boundary extrema and ordered traversal are simple | Insertion/search still traverse unless extra indexing exists |
 | Circular list with sentinel | Uniform boundary cases and simpler splice/delete code | Extra dummy node and a value that must not be treated as user data |
 
-Use the phrase "given a pointer to the element" precisely. In CLRS `DELETE(S, x)` removes a known object, but a singly linked list still cannot generally unlink `x` in constant time from `x` alone, because the predecessor's `next` field must change. Separate these cases explicitly:
+Use the phrase "given a pointer to the element" precisely. In `DELETE(S, x)`, the operation removes a known object, but a singly linked list still cannot generally unlink `x` in constant time from `x` alone, because the predecessor's `next` field must change. Separate these cases explicitly:
 
 - Delete by key: first search for the node and usually its predecessor.
 - Delete by node plus predecessor handle: constant-time pointer rewrite in a singly linked list.
@@ -161,7 +161,7 @@ This example captures the chapter's deeper lesson: simple structures are safe on
 
 | Baseline failure | Required correction |
 | --- | --- |
-| Jumping from elementary arrays/lists directly to hash tables or red-black trees without extracting the Chapter 10 lesson | Explain the operation/access-pattern mismatch first, then mention production library structures as alternatives |
+| Jumping from elementary arrays/lists directly to hash tables or red-black trees without extracting the introductory representation lesson | Explain the operation/access-pattern mismatch first, then mention production library structures as alternatives |
 | Calling an in-memory red-black tree "cache-friendly" because it is logarithmic | Separate asymptotic depth from locality; pointer-heavy trees often lose locality to arrays or B-tree-like layouts |
 | Saying singly linked lists delete in constant time from a node pointer alone | Distinguish delete-by-key, delete-by-node-plus-predecessor, doubly linked delete-by-node, and invalid singly linked delete-by-node-alone claims |
 | Treating circular queues as just modulo arithmetic | State head/tail meanings and the full/empty policy before code |
@@ -185,7 +185,7 @@ This example captures the chapter's deeper lesson: simple structures are safe on
 
 Use these to check future answers:
 
-1. **Industrial dictionary:** For millions of request IDs with membership, update, and occasional ordering, the answer should explain Chapter 10 tradeoffs before recommending a production map or ordered container.
+1. **Industrial dictionary:** For millions of request IDs with membership, update, and occasional ordering, the answer should explain the introductory representation tradeoffs before recommending a production map or ordered container.
 2. **Circular queue wraparound:** The answer should name head/tail meanings, full/empty policy, usable capacity, and overflow/underflow tests.
 3. **Singly linked deletion:** The answer should reject arbitrary constant-time deletion unless the predecessor or a special handle protocol is available.
 4. **Sentinel list:** The answer should simplify splice/delete while warning that the sentinel is not a user element.
