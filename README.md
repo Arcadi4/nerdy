@@ -1,0 +1,2 @@
+# nerdy
+"PhD-level intelligence"
