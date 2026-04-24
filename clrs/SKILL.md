@@ -24,6 +24,7 @@ Current chapter skills:
 - `divide-and-conquer`: recurrences, recursion trees, substitution, Master theorem, Akra-Bazzi, and divide-and-conquer matrix multiplication.
 - `elementary-data-structures`: dynamic sets, arrays, matrices, stacks, queues, linked lists, sentinels, rooted trees, representation invariants, and pointer/locality tradeoffs.
 - `hash-tables`: direct addressing, chaining, open addressing, universal hashing, load factors, deletion behavior, probe bounds, and cache-aware dictionary design.
+- `b-trees`: external-memory search trees, disk-block indexes, B-tree height bounds, node splitting, top-down insertion, deletion rebalancing, and 2-3-4 tree join/split reasoning.
 - `augmenting-data-structures`: augmented red-black trees, order-statistic trees, rank/select queries, interval trees, overlap search, maintained metadata, and augmentation theorem preconditions.
 - `binary-search-trees`: ordered dynamic sets, predecessor and successor navigation, BST deletion and transplant, red-black rotations and balancing invariants, and production ordered-container choices.
 - `dynamic-programming`: optimal substructure, overlapping subproblems, memoization, bottom-up tables, reconstruction, rod cutting, matrix-chain multiplication, LCS, optimal BSTs, and DP production tradeoffs.
