@@ -23,6 +23,7 @@ Current chapter skills:
 - `characterizing-running-times`: asymptotic notation, running-time bounds, growth-rate comparisons, and loop-bound reasoning.
 - `divide-and-conquer`: recurrences, recursion trees, substitution, Master theorem, Akra-Bazzi, and divide-and-conquer matrix multiplication.
 - `elementary-data-structures`: dynamic sets, arrays, matrices, stacks, queues, linked lists, sentinels, rooted trees, representation invariants, and pointer/locality tradeoffs.
+- `data-structures-for-disjoint-sets`: disjoint sets, union-find, linked-list and forest representations, weighted union, union by rank, path compression, connected components, offline minimum, and offline LCA.
 - `hash-tables`: direct addressing, chaining, open addressing, universal hashing, load factors, deletion behavior, probe bounds, and cache-aware dictionary design.
 - `b-trees`: external-memory search trees, disk-block indexes, B-tree height bounds, node splitting, top-down insertion, deletion rebalancing, and 2-3-4 tree join/split reasoning.
 - `augmenting-data-structures`: augmented red-black trees, order-statistic trees, rank/select queries, interval trees, overlap search, maintained metadata, and augmentation theorem preconditions.
