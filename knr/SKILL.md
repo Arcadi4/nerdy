@@ -1,6 +1,7 @@
 ---
 name: knr
 description: K&R; the original C programming language specification and style guide by Brian Kernighan and Dennis Ritchie.
+license: MIT
 ---
 
 # k&r

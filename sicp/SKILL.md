@@ -1,6 +1,7 @@
 ---
 name: sicp
 description: SICP; the classic computer science textbook "Structure and Interpretation of Computer Programs" by Harold Abelson and Gerald Jay Sussman.
+license: MIT
 ---
 
 # sicp

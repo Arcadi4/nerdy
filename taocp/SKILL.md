@@ -1,6 +1,7 @@
 ---
 name: taocp
 description: TAOCP; the comprehensive series "The Art of Computer Programming" by Donald Knuth, covering a wide range of algorithms and programming techniques.
+license: MIT
 ---
 
 # taocp
