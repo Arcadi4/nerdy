@@ -10,6 +10,26 @@ Empower your agents with the famous (or infamous) computer science textbooks:
 - *The C Programming Language* (`knr`)
 - More coming... Recommendations are welcome!
 
+## Get started
+
+Install all books
+
+```bash
+npx skills add arcadi4/nerdy
+```
+
+Install one specific book
+
+```
+npx skill add arcadi4/nerdy.git@bookname
+```
+
+Example: installing only *Introduction to algorithms*
+
+```
+npx skill add arcadi4/nerdy.git@clrs
+```
+
 ## File structure
 
 ```plaintext
