@@ -36,6 +36,7 @@ Current chapter skills:
 - `probabilistic-analysis-and-randomized-algorithms`: probabilistic analysis, indicator random variables, randomized algorithms, random permutations, balls-and-bins, birthday paradox, streaks, and online hiring.
 - `shortest-paths`: single-source and all-pairs shortest paths, relaxation, negative edges and cycles, Bellman-Ford, DAG paths, Dijkstra, Floyd-Warshall, Johnson, difference constraints, transitive closure, arbitrage, and path reconstruction.
 - `maximum-flow`: flow networks, residual networks, augmenting paths, cuts, Ford-Fulkerson, Edmonds-Karp, min-cut certificates, bipartite matching reductions, vertex capacities, and flow-model transformations.
+- `matchings-in-biparite-graphs`: bipartite matching, augmenting paths, Hopcroft-Karp, stable marriage, Gale-Shapley, Hungarian assignment, feasible labels, equality subgraphs, and matching-specific proof certificates.
 - `sorting-and-order-statistics`: heaps, priority queues, sorting choice, stability, linear-time sorting preconditions, selection, medians, quantiles, and top-k decisions.
 
 ## Mathematical Formatting
