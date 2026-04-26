@@ -4,11 +4,11 @@
 
 Empower your agents with the famous (or infamous) computer science textbooks:
 
-- *The Art of Computer Programming* series
-- *Introduction to Algorithms*
-- *Structure and Interpretation of Computer Programs*
-- *The C Programming Language*
-- More coming...
+- *The Art of Computer Programming* series (`taocp`)
+- *Introduction to Algorithms* (`clrs`)
+- *Structure and Interpretation of Computer Programs* (`sicp`)
+- *The C Programming Language* (`knr`)
+- More coming... Recommendations and welcomed!
 
 ## Progress
 
