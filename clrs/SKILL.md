@@ -35,6 +35,7 @@ Current chapter skills:
 - `minimun-spanning-trees`: minimum spanning trees, safe edges, cut and cycle properties, Kruskal's algorithm, Prim's algorithm, bottleneck trees, second-best trees, and MST update reasoning.
 - `probabilistic-analysis-and-randomized-algorithms`: probabilistic analysis, indicator random variables, randomized algorithms, random permutations, balls-and-bins, birthday paradox, streaks, and online hiring.
 - `shortest-paths`: single-source and all-pairs shortest paths, relaxation, negative edges and cycles, Bellman-Ford, DAG paths, Dijkstra, Floyd-Warshall, Johnson, difference constraints, transitive closure, arbitrage, and path reconstruction.
+- `maximum-flow`: flow networks, residual networks, augmenting paths, cuts, Ford-Fulkerson, Edmonds-Karp, min-cut certificates, bipartite matching reductions, vertex capacities, and flow-model transformations.
 - `sorting-and-order-statistics`: heaps, priority queues, sorting choice, stability, linear-time sorting preconditions, selection, medians, quantiles, and top-k decisions.
 
 ## Mathematical Formatting
