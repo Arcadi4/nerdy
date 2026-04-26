@@ -43,6 +43,7 @@ Current chapter skills:
 - `shortest-paths`: single-source and all-pairs shortest paths, relaxation, negative edges and cycles, Bellman-Ford, DAG paths, Dijkstra, Floyd-Warshall, Johnson, difference constraints, transitive closure, arbitrage, and path reconstruction.
 - `maximum-flow`: flow networks, residual networks, augmenting paths, cuts, Ford-Fulkerson, Edmonds-Karp, min-cut certificates, bipartite matching reductions, vertex capacities, and flow-model transformations.
 - `matchings-in-biparite-graphs`: bipartite matching, augmenting paths, Hopcroft-Karp, stable marriage, Gale-Shapley, Hungarian assignment, feasible labels, equality subgraphs, and matching-specific proof certificates.
+- `np-completeness`: P, NP, co-NP, NP-hardness, NP-completeness, polynomial-time reductions, certificates, CIRCUIT-SAT, SAT, 3-CNF-SAT, CLIQUE, VERTEX-COVER, HAM-CYCLE, TSP, SUBSET-SUM, encoding, and pseudo-polynomial traps.
 - `online-algorithms`: competitive analysis, online/offline comparisons, elevator and ski-rental hedging, move-to-front list update, online caching, randomized marking, and adversary models.
 - `sorting-and-order-statistics`: heaps, priority queues, sorting choice, stability, linear-time sorting preconditions, selection, medians, quantiles, and top-k decisions.
 
