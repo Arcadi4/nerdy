@@ -4,10 +4,10 @@
 
 Empower your agents with the famous (or infamous) computer science textbooks:
 
-- *The Art of Computer Programming* series (`taocp`)
 - *Introduction to Algorithms* (`clrs`)
 - *Structure and Interpretation of Computer Programs* (`sicp`)
-- *The C Programming Language* (`knr`)
+- *Types and Programming Languages* (`tapl`)
+- *Computer Systems: A Programmer’s Perspective* (`csapp`)
 - More coming... Recommendations are welcome!
 
 ## Get started
@@ -20,13 +20,13 @@ npx skills add arcadi4/nerdy
 
 Install one specific book
 
-```
+```bash
 npx skills add arcadi4/nerdy@bookname
 ```
 
-Example: installing only *Introduction to algorithms*
+Example: installing only *Introduction to algorithms* (`clrs`)
 
-```
+```bash
 npx skills add arcadi4/nerdy@clrs
 ```
 
@@ -34,14 +34,14 @@ npx skills add arcadi4/nerdy@clrs
 
 ```plaintext
 nerdy/
-|-- book-name         # The book name
-    |-- SKILL.md      # The index skill. Agents start from here.
-    |-- ...sub-skills # After calling the index skill, agents may pick skills relevant to their problem.
+|-- book-name              # The book name
+    |-- SKILL.md           # The index skill. Agents start from here.
+    |-- sub-skill/SKILL.md # After calling the index skill, agents may pick skills relevant to their problem.
 ```
 
 ## Progress
 
 - [x] CLRS: Complete. With 28 specialized skills + 1 indexing skill.
-- [ ] K&R: Not yet started.
 - [ ] SICP: Planned. This will be the next book that I work on.
-- [ ] TAOCP: Not yet started.
+- [ ] TaPL: Not yet started.
+- [ ] CSAPP: Not yet started.
