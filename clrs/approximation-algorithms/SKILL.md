@@ -170,7 +170,7 @@ $$
 For an optimal feasible sum, the returned largest retained sum satisfies the approximation bound below.
 
 $$
-\frac{y^*}{z^*} \le \left(1+\frac{\epsilon}{2n}\right)^n \le 1+\epsilon
+\frac{y^\*}{z^\*} \le \left(1+\frac{\epsilon}{2n}\right)^n \le 1+\epsilon
 $$
 
 The algorithm is an FPTAS only after proving both the approximation guarantee above and a list-length bound polynomial in input size and the reciprocal accuracy parameter. The exact dynamic program alone is not polynomial under binary encoding.
