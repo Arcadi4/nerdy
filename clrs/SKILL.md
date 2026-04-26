@@ -32,6 +32,7 @@ Current chapter skills:
 - `dynamic-programming`: optimal substructure, overlapping subproblems, memoization, bottom-up tables, reconstruction, rod cutting, matrix-chain multiplication, LCS, optimal BSTs, and DP production tradeoffs.
 - `amortized-algorithms`: aggregate analysis, accounting credits, potential functions, multipop stacks, binary counters, dynamic tables, resizing policies, and amortized-versus-average-case traps.
 - `greedy-algorithms`: greedy-choice property, exchange arguments, activity selection, fractional knapsack, Huffman coding, offline caching, and greedy-versus-DP traps.
+- `minimun-spanning-trees`: minimum spanning trees, safe edges, cut and cycle properties, Kruskal's algorithm, Prim's algorithm, bottleneck trees, second-best trees, and MST update reasoning.
 - `probabilistic-analysis-and-randomized-algorithms`: probabilistic analysis, indicator random variables, randomized algorithms, random permutations, balls-and-bins, birthday paradox, streaks, and online hiring.
 - `sorting-and-order-statistics`: heaps, priority queues, sorting choice, stability, linear-time sorting preconditions, selection, medians, quantiles, and top-k decisions.
 
