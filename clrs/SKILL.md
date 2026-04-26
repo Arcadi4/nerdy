@@ -34,6 +34,7 @@ Current chapter skills:
 - `greedy-algorithms`: greedy-choice property, exchange arguments, activity selection, fractional knapsack, Huffman coding, offline caching, and greedy-versus-DP traps.
 - `minimun-spanning-trees`: minimum spanning trees, safe edges, cut and cycle properties, Kruskal's algorithm, Prim's algorithm, bottleneck trees, second-best trees, and MST update reasoning.
 - `probabilistic-analysis-and-randomized-algorithms`: probabilistic analysis, indicator random variables, randomized algorithms, random permutations, balls-and-bins, birthday paradox, streaks, and online hiring.
+- `parallel-algorithms`: fork-join task parallelism, spawn and sync, serial projections, trace DAGs, work/span analysis, greedy scheduling, slackness, determinacy races, parallel loops, matrix multiplication, parallel merge sort, reductions, scans, stencils, and randomized parallel algorithms.
 - `shortest-paths`: single-source and all-pairs shortest paths, relaxation, negative edges and cycles, Bellman-Ford, DAG paths, Dijkstra, Floyd-Warshall, Johnson, difference constraints, transitive closure, arbitrage, and path reconstruction.
 - `maximum-flow`: flow networks, residual networks, augmenting paths, cuts, Ford-Fulkerson, Edmonds-Karp, min-cut certificates, bipartite matching reductions, vertex capacities, and flow-model transformations.
 - `matchings-in-biparite-graphs`: bipartite matching, augmenting paths, Hopcroft-Karp, stable marriage, Gale-Shapley, Hungarian assignment, feasible labels, equality subgraphs, and matching-specific proof certificates.
