@@ -1,6 +1,6 @@
 # Nerdy Skills ☝️🤓
 
-> "PhD-level intelligence"
+> "PhD-level intelligence."
 
 Empower your agents with the famous (or infamous) computer science textbooks:
 
@@ -8,11 +8,11 @@ Empower your agents with the famous (or infamous) computer science textbooks:
 - *Introduction to Algorithms* (`clrs`)
 - *Structure and Interpretation of Computer Programs* (`sicp`)
 - *The C Programming Language* (`knr`)
-- More coming... Recommendations and welcomed!
+- More coming... Recommendations are welcome!
 
 ## Progress
 
-- CLRS: Complete. With 28 specialized skills + 1 indexing skill.
-- K&R: Not started.
-- SICP: Not started.
-- TAOCP: Not started.
+- [x] CLRS: Complete. With 28 specialized skills + 1 indexing skill.
+- [ ] K&R: Not yet started.
+- [ ] SICP: Planned. This will be the next book that I work on.
+- [ ] TAOCP: Not yet started.
