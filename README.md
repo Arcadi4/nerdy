@@ -10,6 +10,15 @@ Empower your agents with the famous (or infamous) computer science textbooks:
 - *The C Programming Language* (`knr`)
 - More coming... Recommendations are welcome!
 
+## File structure
+
+```plaintext
+nerdy/
+|-- book-name         # The book name
+    |-- SKILL.md      # The index skill. Agents start from here.
+    |-- ...sub-skills # After calling the index skill, agents may pick skills relevant to their problem.
+```
+
 ## Progress
 
 - [x] CLRS: Complete. With 28 specialized skills + 1 indexing skill.
