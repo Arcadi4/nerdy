@@ -21,13 +21,13 @@ npx skills add arcadi4/nerdy
 Install one specific book
 
 ```
-npx skill add arcadi4/nerdy.git@bookname
+npx skills add arcadi4/nerdy@bookname
 ```
 
 Example: installing only *Introduction to algorithms*
 
 ```
-npx skill add arcadi4/nerdy.git@clrs
+npx skills add arcadi4/nerdy@clrs
 ```
 
 ## File structure
