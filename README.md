@@ -30,6 +30,13 @@ Example: installing only *Introduction to algorithms* (`clrs`)
 npx skills add arcadi4/nerdy@clrs
 ```
 
+## How to Use
+
+I haven't received enough feedback nor performed enough real-world testing on these skills. Here are how these skills are intended to be used:
+
+- `clrs`: For small models, provide solid algorithmic knowledge to prevent hallucinations. For larger ones, provide a comprehensive framework of analysis to prevent premature conclusions or skipping important details.
+- `sicp`: Helpful at design and refactoring stages. Help models identify problematic patterns, and discover potentially beneficial but unconventional refactorings that are less common in the language's training data.
+
 ## File structure
 
 ```plaintext
