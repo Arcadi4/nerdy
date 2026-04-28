@@ -1,6 +1,6 @@
 ---
 name: csapp
-description: 'CSAPP; "Computer Systems: A Programmer's Perspective" by Randal E. Bryant and David R. O'Hallaron, covering computer architecture, systems programming, and performance optimization.'
+description: CSAPP; "Computer Systems A Programmer's Perspective" by Randal E. Bryant and David R. O'Hallaron, covering computer architecture, systems programming, and performance optimization.
 license: MIT
 ---
 
