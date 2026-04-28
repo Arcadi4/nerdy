@@ -5,3 +5,6 @@
 .sisyphus
 .superpowers
 docs/superpowers
+
+# OS
+.DS_Store
