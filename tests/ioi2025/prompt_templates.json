@@ -1,0 +1,97 @@
+{
+  "openings": {
+    "skills": [
+      "Use the CLRS indexing skill (`clrs`) to analyze this IOI 2025 problem as a benchmark pressure scenario.\n",
+      "Use the clrs indexing skill to choose applicable CLRS chapter skills according to your own judgment.\n",
+      "Start immediately; do not ask for framework-specific setup. Read the raw problem PDF before answering.\n"
+    ],
+    "control": [
+      "Control group benchmark: solve this IOI 2025 problem without using any skills.\n",
+      "Start immediately; do not ask for framework-specific setup. Read the raw problem PDF before answering.\n"
+    ],
+    "reviewer": [
+      "Reviewer benchmark: this prompt is for a separate reviewer model, not the tested solver model.\n",
+      "Cross-verify the already-produced candidate C++ .cpp file against the official IOI 2025 solutions.\n"
+    ]
+  },
+  "setups": {
+    "skills": [
+      "Load or consult the clrs indexing skill first, then load only the CLRS chapter skills you judge relevant.\n"
+    ],
+    "control": [
+      "Do not use any skills. Do not load, invoke, cite, or rely on CLRS skills or any other skill files.\n",
+      "Use only the raw problem PDF, the prompt, and your base model reasoning.\n"
+    ]
+  },
+  "solver_file_policy": [
+    "Answer file path: {answer_file_path}. Produce exactly this C++17 .cpp answer file for your solution; ",
+    "do not choose another name or directory. You may compile and run {answer_file_path} with the installed C++ toolchains ",
+    "only under the file-operation limits below.\n",
+    "Allowed file operations: read only the named raw problem PDF and write only {answer_file_path}. ",
+    "Do not read any file other than the named raw problem PDF. Do not write any file other than {answer_file_path}. ",
+    "Do not create temporary files or extracted text files. Use pdftotext only with stdout output.\n",
+    "Forbidden tools: Do not use subagents. Do not use web search, web fetch, browser tools, or external references. ",
+    "Do not use file search tools. Do not use directory listing tools. ",
+    "Do not use grep, rg, ripgrep, find, ls, glob, or ast_grep_search. ",
+    "Do not read, list, search, open, or visit ioi2025solutions or any path under it.\n"
+  ],
+  "solver_attempt_policy": [
+    "Attempt limit: You may run your answer file at most 3 total times for verification; each execution counts. ",
+    "Stop after the third run and report any remaining uncertainty.\n"
+  ],
+  "solver_metadata_policy": [
+    "Metadata comments: append metadata as comments at the end of the C++17 .cpp answer file. ",
+    "Do not write a separate Result dump. Include model, scoring, skills_used, cpp_file, answer_file_runs, ",
+    "attempts_used, subagents_used, websearches_used, raw_pdf_read, and notes. For control prompts, write skills_used: [].\n"
+  ],
+  "solver_expected_output": {
+    "header": "Expected output:\n",
+    "first_section": {
+      "skills": "1. CLRS skill selection - use the clrs indexing skill to choose applicable CLRS chapter skills, then name the skills used and why they fit.\n",
+      "control": "1. Baseline method - solve without skills and state that no skills were used.\n"
+    },
+    "middle_sections": [
+      "2. Problem model - summarize the input, output, constraints, and objective from the PDF.\n",
+      "3. Assumptions and edge cases - list the cases that control correctness or complexity.\n"
+    ],
+    "strategy_section": {
+      "skills": "4. Algorithmic strategy - give the CLRS-guided approach, data structures, and complexity.\n",
+      "control": "4. Algorithmic strategy - give the baseline approach, data structures, and complexity.\n"
+    },
+    "tail_sections": [
+      "5. Correctness notes - state the invariant, proof move, or reduction that supports the strategy.\n",
+      "6. Verification plan - list concrete tests or checks that would catch likely wrong answers.\n"
+    ]
+  },
+  "requirements": {
+    "skills": [
+      "MUST identify the relevant CLRS technique before proposing an algorithm.\n",
+      "MUST state assumptions and edge cases from the raw problem statement.\n",
+      "MUST explain how your selected CLRS skills changed the solution strategy compared with a baseline answer."
+    ],
+    "control": [
+      "MUST solve without naming, citing, or depending on any skill guidance.\n",
+      "MUST state assumptions and edge cases from the raw problem statement.\n",
+      "MUST explain the strategy as a baseline answer, not a skill-guided answer."
+    ]
+  },
+  "reviewer_policy": [
+    "Candidate C++ .cpp file: use the tested solver's submitted file path or the cpp_file value ",
+    "from its metadata comments; expected fixed path is {answer_file_path}.\n",
+    "Official solution directory: ioi2025solutions. The tested solver was forbidden from visiting it, but this reviewer may inspect it for cross-verification.\n",
+    "Do not modify the candidate .cpp file. Do not rewrite the solver answer.\n",
+    "This review is separate from benchmark solving and does not count against the tested solver's three-run limit.\n",
+    "Forbidden tools: Do not use subagents. Do not use web search, web fetch, browser tools, or external references.\n"
+  ],
+  "reviewer_expected_output": [
+    "Expected output:\n",
+    "1. Candidate summary - identify the candidate cpp_file path, compile/run commands inspected or executed, and whether it builds.\n",
+    "2. Official-solution comparison - compare the candidate algorithm and complexity against ioi2025solutions and the raw PDF.\n",
+    "3. Correctness risks - list mismatches, missing cases, or unsupported assumptions.\n",
+    "4. Verdict - pass, partial, or fail, with concrete evidence.\n",
+    "5. Result dump - self-report model, candidate_cpp_file, metadata comments found, official_solution_files_read, ",
+    "reviewer_runs, subagents_used, websearches_used, and notes."
+  ],
+  "pdf_extraction_guidance": "PDF extraction: Discover available PDF text extraction tools first, such as pdftotext, before trying direct PDF reading. If pdftotext is installed, prefer a command like `pdftotext -layout <raw-pdf-path> -` so extracted text is printed to stdout, not written to a file. If you are not multimodal, extract the PDF text with local tools before reading or reasoning from the PDF, but do not create temporary files or extracted text files.\n",
+  "copy_paste_guide": "Copy/paste guide for IOI 2025 JSONL\n1. skills prompts/control prompts: run --group skills|control --problem 1; use a new agent per problem.\n2. Copy one JSONL object. Paste the prompt value into the tested agent.\n3. skills prompts tell the solver to use the clrs indexing skill and choose CLRS chapter skills by judgment.\n4. Tested solver may only read the named PDF, write fixed answer.cpp, avoid file search/listing, and must not use ioi2025solutions.\n5. reviewer prompts: after .cpp exists, run --group reviewer --problem 1 for a separate reviewer model.\n"
+}

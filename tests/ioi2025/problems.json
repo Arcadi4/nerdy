@@ -1,0 +1,36 @@
+{
+  "benchmark": "ioi2025",
+  "description": "Raw IOI 2025 problem statements for CLRS indexing-skill benchmark prompts.",
+  "problems": [
+    {
+      "task": 1,
+      "name": "Souvenirs",
+      "pdf_path": "tests/ioi2025/ioi2025problem1.pdf"
+    },
+    {
+      "task": 2,
+      "name": "Triple Peaks",
+      "pdf_path": "tests/ioi2025/ioi2025problem2.pdf"
+    },
+    {
+      "task": 3,
+      "name": "World Map",
+      "pdf_path": "tests/ioi2025/ioi2025problem3.pdf"
+    },
+    {
+      "task": 4,
+      "name": "Festival",
+      "pdf_path": "tests/ioi2025/ioi2025problem4.pdf"
+    },
+    {
+      "task": 5,
+      "name": "Migrations",
+      "pdf_path": "tests/ioi2025/ioi2025problem5.pdf"
+    },
+    {
+      "task": 6,
+      "name": "Obstacles for a Llama",
+      "pdf_path": "tests/ioi2025/ioi2025problem6.pdf"
+    }
+  ]
+}
