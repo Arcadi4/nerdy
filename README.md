@@ -46,9 +46,10 @@ Helpful at the design or refactoring stage. Guide models to identify problematic
 
 ```plaintext
 nerdy/
-|-- book-name              # The book name
-    |-- SKILL.md           # The index skill. Agents start from here.
-    |-- sub-skill/SKILL.md # After calling the index skill, agents may pick skills relevant to their problem.
+|-- [book-name]              # The book
+    |-- SKILL.md             # Indexing skill. Book-specific instructions and ToC.
+    |-- [sub-skill]/SKILL.md # Topic-based skills.
+|-- tests                    # For benchmarking
 ```
 
 ## Progress
